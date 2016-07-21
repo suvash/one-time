@@ -212,6 +212,13 @@ One-Time uses [Leiningen 2](https://github.com/technomancy/leiningen/blob/master
 Then create a branch and make your changes on it. Once you are done with your changes and all tests pass, submit
 a pull request on GitHub.
 
+## References
+
+These resources were invaluable towards developing this library.
+
+- https://github.com/djui/clj-otp
+- http://nakkaya.com/2012/08/13/google-hotp-totp-two-factor-authentication-for-clojure/
+
 ## License
 
 Copyright © 2016 Suvash Thapaliya
