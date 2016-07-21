@@ -5,4 +5,5 @@ jdk:
   - openjdk7
   - oraclejdk7
   - oraclejdk8
-
+after_script:
+  - lein cloverage -o cov --coveralls && curl -F 'json_file=@cov/coveralls.json' 'https://coveralls.io/api/v1/jobs'

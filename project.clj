@@ -7,7 +7,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [commons-codec "1.10"]
                  [ring/ring-codec "1.0.1"]]
-  :profiles {:dev {:plugins      []}
+  :profiles {:dev {:plugins      [[lein-cloverage "1.0.6"]]}
              :1.6 {:dependencies [[org.clojure/clojure "1.6.0"]]}
              :1.7 {:dependencies [[org.clojure/clojure "1.7.0"]]}
              :master {:dependencies [[org.clojure/clojure "1.8.0-master-SNAPSHOT"]]}}
