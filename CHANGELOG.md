@@ -7,5 +7,5 @@ All notable changes to this project will be documented in this file. This change
 ### Added
 - First version of the project made public
 
-[Unreleased]: https://github.com/suvash/one-time/compare/0.1.0...HEAD
-[0.1.0]: https://github.com/suvash/one-time/compare/0.1.0...120f051fdf53f534acdaf9e8d100b883febca0cf
+[Unreleased]: https://github.com/suvash/one-time/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/suvash/one-time/compare/120f051fdf53f534acdaf9e8d100b883febca0cf...v0.1.0
