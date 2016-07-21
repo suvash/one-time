@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/suvash/one-time.svg?branch=master)](https://travis-ci.org/suvash/one-time?branch=master)
 [![License](https://img.shields.io/badge/license-EPL-blue.svg?style=flat)](https://github.com/suvash/one-time/blob/master/LICENSE)
-
+[![Clojars Project](https://img.shields.io/clojars/v/one-time.svg)](https://clojars.org/one-time)
 
 A Clojure library for generating one time passwords (HOTP & TOTP) as per [RFC 4226](http://tools.ietf.org/html/rfc4226) and [RFC 6238](http://tools.ietf.org/html/rfc6238).
 
@@ -19,7 +19,36 @@ One-Time is a new library, however should be feature complete and fairly stable.
 
 ## Installation
 
-TODO
+### Leiningen:
+
+Add the following to your `:dependencies` in `project.clj`.
+
+    [one-time "0.1.0"]
+
+### Maven
+
+Make sure to add Clojars to your `pom.xml`:
+
+``` xml
+<repository>
+  <id>clojars.org</id>
+  <url>http://clojars.org/repo</url>
+</repository>
+```
+
+Then add the following to Maven dependencies.
+
+    <dependency>
+      <groupId>one-time</groupId>
+      <artifactId>one-time</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+
+
+### Gradle
+
+    compile "one-time:one-time:0.1.0"
+
 
 ## Documentation
 
