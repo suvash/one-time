@@ -8,12 +8,12 @@
 
 (defn encode
   "Encodes a string to base32 string."
-  [string]
+  [^String string]
   (encode-binary (.getBytes string)))
 
 (defn decode-binary
   "Decodes a base32 string to binary."
-  [string]
+  ^bytes [string]
   (.decode (Base32.) string))
 
 (defn decode
