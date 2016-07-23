@@ -20,7 +20,7 @@
 
 (defn- counter-since-epoch
   "Calculate the number of time steps until for a date-time since epoch given a time step length."
-  [date-time time-step-duration]
+  [^Date date-time time-step-duration]
   (int (/ (unix-timestamp (.getTime date-time)) time-step-duration)))
 
 (defn- unix-timestamp
