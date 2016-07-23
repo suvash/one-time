@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file. This change
 ### Added
 - Add Contributors section to the readme.
 
+### Changed
+- Changed the project description to be more searchable.
+
 ## [0.2.0] - 2016-07-23
 ### Added
 - Fixed reflection warnings
