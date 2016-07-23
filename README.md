@@ -22,7 +22,7 @@ One-Time is a new library, however should be feature complete and fairly stable.
 
 Add the following to your `:dependencies` in `project.clj`.
 
-    [one-time "0.1.0"]
+    [one-time "0.2.0"]
 
 ### Maven
 
@@ -40,13 +40,13 @@ Then add the following to Maven dependencies.
     <dependency>
       <groupId>one-time</groupId>
       <artifactId>one-time</artifactId>
-      <version>0.1.0</version>
+      <version>0.2.0</version>
     </dependency>
 
 
 ### Gradle
 
-    compile "one-time:one-time:0.1.0"
+    compile "one-time:one-time:0.2.0"
 
 
 ## Documentation
