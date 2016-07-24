@@ -211,6 +211,10 @@ One-Time uses [Leiningen 2](https://github.com/technomancy/leiningen/blob/master
 Then create a branch and make your changes on it. Once you are done with your changes and all tests pass, submit
 a pull request on GitHub.
 
+## Changelog
+
+Please check the [CHANGELOG.md](https://github.com/suvash/one-time/blob/master/CHANGELOG.md) graph for now.
+
 ## Contributors
 
 Please check the [contribution graph](https://github.com/suvash/one-time/graphs/contributors) graph for now.

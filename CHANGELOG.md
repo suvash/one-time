@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This change
 ## [Unreleased]
 ### Added
 - Add Contributors section to the readme.
+- Add Changelog section to the readme.
 
 ### Changed
 - Changed the project description to be more searchable.
