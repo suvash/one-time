@@ -4,14 +4,17 @@
   :url "http://github.com/suvash/one-time"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
+
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [commons-codec "1.10"]
-                 [ring/ring-codec "1.0.1"]]
+                 [ring/ring-codec "1.0.1"]
+                 [com.github.kenglxn.qrgen/javase "2.2.0"]]
   :profiles {:dev {:plugins      [[lein-cloverage "1.0.6"]]}
              :1.6 {:dependencies [[org.clojure/clojure "1.6.0"]]}
              :1.7 {:dependencies [[org.clojure/clojure "1.7.0"]]}
              :master {:dependencies [[org.clojure/clojure "1.8.0-master-SNAPSHOT"]]}}
-  :repositories {"sonatype" {:url "http://oss.sonatype.org/content/repositories/releases"
+  :repositories {"jitpack" "https://jitpack.io"
+                 "sonatype" {:url "http://oss.sonatype.org/content/repositories/releases"
                              :snapshots false
                              :releases {:checksum :fail :update :always}}
                  "sonatype-snapshots" {:url "http://oss.sonatype.org/content/repositories/snapshots"
