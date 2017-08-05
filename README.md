@@ -175,11 +175,35 @@ Run the following in a REPL and compare the values on the REPL and your device. 
 (ot/get-totp-token secret-key)
 ```
 
-### QR Code URL Generation - READ CAREFULLY !
+### QR Code Image Generation
 
-As of now, this library only supports QR code URL generation using Google APIs. The QR codes are themselves hosted by Google, hence it is fair to assume that the encoded TOTP/HOTP URIs will be logged on their servers along with the image http requests. This is a MAJOR SECURITY RISK, especially given that the secret has tbe presented to the user without anybody snooping around.
+This library wraps over https://github.com/kenglxn/QRGen, to generate QR code images locally. The generated image can be read as a `java.io.File` or over a `java.io.ByteArrayoutputstream`. Optionally, image type (BMP,JPG,PNG,GIF) and image size can be provided.
+```clojure
+(require '[one-time.core :as ot])
+(require '[one-time.qrgen :as qrgen])
 
-In the future, it might be possible for this library to generate QR codes directly which can then be served and destryed immediately. However, there are no such plans as of now.
+;; Generate the key first, in this example i'll pick one
+(def secret-key "HTWU5NFLBMWY2MQS")
+
+;; TOTP QRcode image file generation, default image size(125px square) and type(JPG)
+(def qrcode-file (qrgen/totp-file {:image-type :BMP :label "company.org" :user "user@gmail.com" :secret secret}))
+
+;; TOTP QRcode image bytestream generation, in GIF
+(def qrcode-bytestream (qrgen/totp-bytestream {:image-type :GIF :label "company.org" :user "user@gmail.com" :secret secret}))
+
+;; HOTP QRcode image file generation, 300px square in PNG
+(def qrcode-file (qrgen/hotp-file {:image-type :PNG :image-size 300 :label "company.org" :user "user@gmail.com" :secret secret :counter 123}))
+
+;; HOTP QRcode image bytestream generation
+(def qrcode-bytestream (qrgen/hotp-bytestream {:label "company.org" :user "user@gmail.com" :secret secret :counter 123}))
+```
+
+
+### DEPRECATED - will be removed in the next version - QR Code URL Generation - READ CAREFULLY !
+
+This library also supports QR code URL generation using Google APIs. This WILL BE REMOVED in the next release. The QR codes are themselves hosted by Google, hence it is fair to assume that the encoded TOTP/HOTP URIs will be logged on their servers along with the image http requests. This is a MAJOR SECURITY RISK, especially given that the secret has tbe presented to the user without anybody snooping around.
+
+PLEASE generate the QR code images directly as explained above, which can then be served and destroyed immediately.
 
 IF YOU HAVE READ THE ABOVE PROPERLY AND UNDERSTAND THE RISKS, feel free to continue with the QR Code URL generation.
 ```clojure
