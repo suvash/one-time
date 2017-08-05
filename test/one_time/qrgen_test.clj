@@ -1,11 +1,11 @@
 (ns one-time.qrgen-test
   (:require [clojure.test :refer [deftest testing is]]
-            [one-time.core :as otp]
+            [one-time.core :as ot]
             [one-time.qrgen :as qrgen]))
 
 (deftest totp-bytestream-returns-a-bytestream
   (testing "TOTP QR code bytestream test"
-    (let [secret (otp/generate-secret-key)
+    (let [secret (ot/generate-secret-key)
           bytestream (qrgen/totp-bytestream {:label "company.org"
                                              :user "user@gmail.com"
                                              :secret secret})]
@@ -13,7 +13,7 @@
 
 (deftest totp-file-returns-a-file
   (testing "TOTP QR code image file test"
-    (let [secret (otp/generate-secret-key)
+    (let [secret (ot/generate-secret-key)
           file (qrgen/totp-file {:label "company.org"
                                  :user "user@gmail.com"
                                  :secret secret})]
@@ -21,7 +21,7 @@
 
 (deftest hotp-bytestream-returns-a-bytestream
   (testing "HOTP QR code bytestream test"
-    (let [secret (otp/generate-secret-key)
+    (let [secret (ot/generate-secret-key)
           bytestream (qrgen/hotp-bytestream {:label "company.org"
                                              :user "user@gmail.com"
                                              :secret secret
@@ -30,7 +30,7 @@
 
 (deftest hotp-file-returns-a-file
   (testing "HOTP QR code file test"
-    (let [secret (otp/generate-secret-key)
+    (let [secret (ot/generate-secret-key)
           file (qrgen/hotp-file {:label "company.org"
                                  :user "user@gmail.com"
                                  :secret secret
