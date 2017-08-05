@@ -1,4 +1,4 @@
-(ns one-time.qr
+(ns one-time.qrgen
   (:require [one-time.uri :as uri])
   (:import net.glxn.qrgen.core.image.ImageType
            net.glxn.qrgen.javase.QRCode))
@@ -9,7 +9,7 @@
    :PNG ImageType/PNG
    :BMP ImageType/BMP})
 
-(defn totp-qr-bytestream
+(defn totp-bytestream
   "Returns a java.io.ByteArrayOutputStream"
   [{:keys [image-type label user secret]
     :or {image-type :JPG}}]
@@ -21,7 +21,7 @@
       (.to (image-types image-type))
       (.stream)))
 
-(defn hotp-qr-bytestream
+(defn hotp-bytestream
   "Returns a java.io.ByteArrayOutputStream"
   [{:keys [image-type label user secret counter]
     :or {image-type :JPG}}]

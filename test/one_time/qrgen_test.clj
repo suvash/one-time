@@ -1,20 +1,20 @@
-(ns one-time.qr-test
+(ns one-time.qrgen-test
   (:require [clojure.test :refer [deftest testing is]]
             [one-time.core :as otp]
-            [one-time.qr :as qr]))
+            [one-time.qrgen :as qrgen]))
 
-(deftest totp-qr-bytestream-returns-a-bytestream
-  (testing "TOTP QR code bytestream test"
+(deftest totp-qrgen-bytestream-returns-a-bytestream
+  (testing "TOTP QRGEN code bytestream test"
     (let [secret (otp/generate-secret-key)
-          bytestream (qr/totp-qr-bytestream {:label "company.org"
+          bytestream (qrgen/totp-bytestream {:label "company.org"
                                              :user "user@gmail.com"
                                              :secret secret})]
       (is (instance? java.io.ByteArrayOutputStream bytestream)))))
 
-(deftest hotp-qr-bytestream-returns-a-bytestream
-  (testing "HOTP QR code bytestream test"
+(deftest hotp-qrgen-bytestream-returns-a-bytestream
+  (testing "HOTP QRGEN code bytestream test"
     (let [secret (otp/generate-secret-key)
-          bytestream (qr/hotp-qr-bytestream {:label "company.org"
+          bytestream (qrgen/hotp-bytestream {:label "company.org"
                                              :user "user@gmail.com"
                                              :secret secret
                                              :counter 1})]
