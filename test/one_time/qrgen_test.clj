@@ -3,13 +3,13 @@
             [one-time.core :as ot]
             [one-time.qrgen :as qrgen]))
 
-(deftest totp-bytestream-returns-a-bytestream
-  (testing "TOTP QR code bytestream test"
+(deftest totp-stream-returns-a-stream
+  (testing "TOTP QR code stream test"
     (let [secret (ot/generate-secret-key)
-          bytestream (qrgen/totp-bytestream {:label "company.org"
-                                             :user "user@gmail.com"
-                                             :secret secret})]
-      (is (instance? java.io.ByteArrayOutputStream bytestream)))))
+          stream (qrgen/totp-stream {:label "company.org"
+                                     :user "user@gmail.com"
+                                     :secret secret})]
+      (is (instance? java.io.ByteArrayOutputStream stream)))))
 
 (deftest totp-file-returns-a-file
   (testing "TOTP QR code image file test"
@@ -19,14 +19,14 @@
                                  :secret secret})]
       (is (instance? java.io.File file)))))
 
-(deftest hotp-bytestream-returns-a-bytestream
-  (testing "HOTP QR code bytestream test"
+(deftest hotp-stream-returns-a-stream
+  (testing "HOTP QR code stream test"
     (let [secret (ot/generate-secret-key)
-          bytestream (qrgen/hotp-bytestream {:label "company.org"
-                                             :user "user@gmail.com"
-                                             :secret secret
-                                             :counter 1})]
-      (is (instance? java.io.ByteArrayOutputStream bytestream)))))
+          stream (qrgen/hotp-stream {:label "company.org"
+                                     :user "user@gmail.com"
+                                     :secret secret
+                                     :counter 1})]
+      (is (instance? java.io.ByteArrayOutputStream stream)))))
 
 (deftest hotp-file-returns-a-file
   (testing "HOTP QR code file test"

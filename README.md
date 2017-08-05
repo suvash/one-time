@@ -188,14 +188,14 @@ This library wraps over https://github.com/kenglxn/QRGen, to generate QR code im
 ;; TOTP QRcode image file generation, default image size(125px square) and type(JPG)
 (def qrcode-file (qrgen/totp-file {:image-type :BMP :label "company.org" :user "user@gmail.com" :secret secret}))
 
-;; TOTP QRcode image bytestream generation, in GIF
-(def qrcode-bytestream (qrgen/totp-bytestream {:image-type :GIF :label "company.org" :user "user@gmail.com" :secret secret}))
+;; TOTP QRcode image stream generation, in GIF
+(def qrcode-stream (qrgen/totp-stream {:image-type :GIF :label "company.org" :user "user@gmail.com" :secret secret}))
 
 ;; HOTP QRcode image file generation, 300px square in PNG
 (def qrcode-file (qrgen/hotp-file {:image-type :PNG :image-size 300 :label "company.org" :user "user@gmail.com" :secret secret :counter 123}))
 
-;; HOTP QRcode image bytestream generation
-(def qrcode-bytestream (qrgen/hotp-bytestream {:label "company.org" :user "user@gmail.com" :secret secret :counter 123}))
+;; HOTP QRcode image stream generation
+(def qrcode-stream (qrgen/hotp-stream {:label "company.org" :user "user@gmail.com" :secret secret :counter 123}))
 ```
 
 

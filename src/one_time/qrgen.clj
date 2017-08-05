@@ -9,7 +9,7 @@
    :PNG ImageType/PNG
    :BMP ImageType/BMP})
 
-(defn totp-bytestream
+(defn totp-stream
   "Returns a java.io.ByteArrayOutputStream with the totp qrcode"
   [{:keys [image-type image-size label user secret]
     :or {image-type :JPG image-size 125}}]
@@ -37,7 +37,7 @@
       (.withSize image-size image-size)
       (.file)))
 
-(defn hotp-bytestream
+(defn hotp-stream
   "Returns a java.io.ByteArrayOutputStream with the hotp qrcode"
   [{:keys [image-type image-size label user secret counter]
     :or {image-type :JPG image-size 125}}]
