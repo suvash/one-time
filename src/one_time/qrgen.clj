@@ -14,9 +14,9 @@
   [{:keys [image-type label user secret]
     :or {image-type :JPG}}]
   {:pre [(image-types image-type)]}
-  (-> (uri/totp-uri {:label label
-                     :secret secret
-                     :user user})
+  (-> (^String uri/totp-uri {:label label
+                             :secret secret
+                             :user user})
       (QRCode/from)
       (.to (image-types image-type))
       (.stream)))
@@ -26,10 +26,10 @@
   [{:keys [image-type label user secret counter]
     :or {image-type :JPG}}]
   {:pre [(image-types image-type)]}
-  (-> (uri/hotp-uri {:label label
-                     :secret secret
-                     :user user
-                     :counter counter})
+  (-> (^String uri/hotp-uri {:label label
+                             :secret secret
+                             :user user
+                             :counter counter})
       (QRCode/from)
       (.to (image-types image-type))
       (.stream)))
