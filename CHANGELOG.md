@@ -6,9 +6,11 @@ All notable changes to this project will be documented in this file. This change
 - Add Contributors section to the readme.
 - Add Changelog section to the readme.
 - Rename LICENSE file to LICENSE.txt
+- Add support for QRcode image generation locally.
 
 ### Changed
 - Changed the project description to be more searchable.
+- Deprecated the existing Google chart based QRcode image generator.
 
 ## [0.2.0] - 2016-07-23
 ### Added
