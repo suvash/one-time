@@ -9,7 +9,7 @@
    :PNG ImageType/PNG
    :BMP ImageType/BMP})
 
-(defn topt-qr-bytestream
+(defn totp-qr-bytestream
   "Returns a java.io.ByteArrayOutputStream"
   [{:keys [image-type label user secret]
     :or {image-type :JPG}}]
