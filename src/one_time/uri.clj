@@ -23,8 +23,8 @@
   {:pre [(not-any? nil? [label user secret qr-code-size])]}
   (let [otpauth-uri (totp-uri all)
         params {:chs qr-code-size :cht "qr" :chl otpauth-uri}]
-    (println "Keep in mind that these URLs are rendered using Google APIs, and hence will show up in their logs.")
-    (println "It is better to use the `totp-uri` function and render the QR separately on your own servers until this library supports it.")
+    (println "DEPRECATED : WILL BE REMOVED ON NEXT RELEASE. Instead, use the `qrgen` namespace to generate qrcode images locally and serve to your users accordingly.")
+    (println "WARNING : Keep in mind that these URLs are rendered using Google APIs, and hence will show up in their logs.")
     (build-url "https://chart.googleapis.com/chart" params)))
 
 (defn hotp-qrcode-url
@@ -33,8 +33,8 @@
   {:pre [(not-any? nil? [label user secret qr-code-size counter])]}
   (let [otpauth-uri (hotp-uri all)
         params {:chs qr-code-size :cht "qr" :chl otpauth-uri}]
-    (println "Keep in mind that these URLs are rendered using Google APIs, and hence will show up in their logs.")
-    (println "It is better to use the `hotp-uri` function and render the QR separately on your own servers until this library supports it.")
+    (println "DEPRECATED : WILL BE REMOVED ON NEXT RELEASE. Instead, use the `qrgen` namespace to generate qrcode images locally and serve to your users accordingly.")
+    (println "WARNING : Keep in mind that these URLs are rendered using Google APIs, and hence will show up in their logs.")
     (build-url "https://chart.googleapis.com/chart" params)))
 
 (defn- otp-uri
