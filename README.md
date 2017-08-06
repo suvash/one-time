@@ -14,7 +14,7 @@ This library has been tested to be compatible with :
 
 ## Project Maturity
 
-One-Time is a new library, however should be feature complete and fairly stable.
+One-Time is a feature complete and fairly stable library, given the small surface area of it's intent. Bugfixes and dependency updated will be made as needed.
 
 ## Installation
 
@@ -179,7 +179,6 @@ Run the following in a REPL and compare the values on the REPL and your device. 
 
 This library wraps over https://github.com/kenglxn/QRGen, to generate QR code images locally. The generated image can be read as a `java.io.File` or over a `java.io.ByteArrayoutputstream`. Optionally, image type (BMP,JPG,PNG,GIF) and image size can be provided.
 ```clojure
-(require '[one-time.core :as ot])
 (require '[one-time.qrgen :as qrgen])
 
 ;; Generate the key first, in this example i'll pick one
@@ -197,31 +196,6 @@ This library wraps over https://github.com/kenglxn/QRGen, to generate QR code im
 ;; HOTP QRcode image stream generation
 (def qrcode-stream (qrgen/hotp-stream {:label "company.org" :user "user@gmail.com" :secret secret :counter 123}))
 ```
-
-
-### DEPRECATED - will be removed in the next version - QR Code URL Generation - READ CAREFULLY !
-
-This library also supports QR code URL generation using Google APIs. This WILL BE REMOVED in the next release. The QR codes are themselves hosted by Google, hence it is fair to assume that the encoded TOTP/HOTP URIs will be logged on their servers along with the image http requests. This is a MAJOR SECURITY RISK, especially given that the secret has tbe presented to the user without anybody snooping around.
-
-PLEASE generate the QR code images directly as explained above, which can then be served and destroyed immediately.
-
-IF YOU HAVE READ THE ABOVE PROPERLY AND UNDERSTAND THE RISKS, feel free to continue with the QR Code URL generation.
-```clojure
-(require '[one-time.uri  :as oturi])
-
-;; Generate the key first, in this example i'll pick one
-(def secret-key "NBCVJLJHRKQEYLAD")
-
-;; TOTP URL Generation requires the same map as required by the URI generation function
-(oturi/totp-qrcode-url {:label "Company.com" :user "user@email.com" :secret secret-key})
-;= "https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=otpauth%3A%2F%2Ftotp%2FCompany.com%3Auser%2540email.com%3Fsecret%3DNBCVJLJHRKQEYLAD%26issuer%3DCompany.com"
-
-;; HOTP URL Generation requires the same map as required by the URI generation function
-(oturi/hotp-qrcode-url {:label "Company.com" :user "user@email.com" :secret secret-key :counter 123456})
-;= "https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=otpauth%3A%2F%2Fhotp%2FCompany.com%3Auser%2540email.com%3Fsecret%3DNBCVJLJHRKQEYLAD%26issuer%3DCompany.com%26counter%3D123456"
-```
-The URLs generated above should display the correct QR code, which can be used to scan on a device.
-
 ## Supported Clojure Versions
 
 One-Time has been tested to work against Clojure 1.6 and up. The most recent release is always recommended.

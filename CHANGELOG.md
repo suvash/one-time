@@ -2,19 +2,22 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
 ## [Unreleased]
-### Added
-### Changed
+
+### Removed
+- Removed support for QR Code URLs generated via Google Chart APIs
 
 ## [0.3.0] - 2017-08-06
 ### Added
 - Add Contributors section to the readme.
 - Add Changelog section to the readme.
-- Rename LICENSE file to LICENSE.txt
 - Add support for QRcode image generation locally.
 
 ### Changed
+- Rename LICENSE file to LICENSE.txt
 - Changed the project description to be more searchable.
-- Deprecated the existing Google chart based QRcode image generator.
+
+### Deprecated
+- Deprecated the existing Google chart API based QRcode image generator.
 
 ## [0.2.0] - 2016-07-23
 ### Added
