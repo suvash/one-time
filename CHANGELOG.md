@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 
+### Added
+- Add support for Docker and Compose for development environments.
+
 ### Removed
 - Removed support for QR Code URLs generated via Google Chart APIs
 

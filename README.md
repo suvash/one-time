@@ -14,7 +14,7 @@ This library has been tested to be compatible with :
 
 ## Project Maturity
 
-One-Time is a feature complete and fairly stable library, given the small surface area of it's intent. Bugfixes and dependency updated will be made as needed.
+One-Time is a feature complete and fairly stable library, given the small surface area of it's intent. Bugfixes and dependency updates will be made as required.
 
 ## Installation
 
@@ -202,9 +202,11 @@ One-Time has been tested to work against Clojure 1.6 and up. The most recent rel
 
 ## Development
 
-One-Time uses [Leiningen 2](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md). Make sure you have it installed and then run tests against all supported Clojure versions using
+If you already have Leiningen on your machine, you should just be able to run `lein all test` as you would do on other leiningen projects.
 
-    lein all test
+As prefered by the author, you can also use the provided Makefile to run the tests. You will need Docker and Docker compose on your machine. After that you can simply run
+
+    make test
 
 Then create a branch and make your changes on it. Once you are done with your changes and all tests pass, submit
 a pull request on GitHub.
@@ -226,6 +228,6 @@ These resources were invaluable towards developing this library.
 
 ## License
 
-Copyright © 2016 Suvash Thapaliya
+Copyright © 2017 Suvash Thapaliya
 
 Distributed under the [Eclipse Public License](https://github.com/suvash/one-time/blob/master/LICENSE).

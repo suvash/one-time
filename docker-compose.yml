@@ -1,0 +1,9 @@
+version: "3"
+services:
+
+  one-time:
+    build: .
+    command: lein test
+    restart: always
+    volumes:
+      - ./:/usr/src/app
