@@ -7,7 +7,8 @@ All notable changes to this project will be documented in this file. This change
 - Add support for Docker and Compose for development environments.
 
 ### Removed
-- Removed support for QR Code URLs generated via Google Chart APIs
+- Removed support for QR Code URLs generated via Google Chart APIs.
+- Remove Vagrant support for development environments.
 
 ## [0.3.0] - 2017-08-06
 ### Added
