@@ -4,7 +4,7 @@
 RUN_SERVICE:=one-time
 
 run:
-	$(if $(CMD), docker-compose run $(RUN_SERVICE) $(CMD), $(error -- CMD must be set))
+	$(if $(CMD), docker-compose run --rm $(RUN_SERVICE) $(CMD), $(error -- CMD must be set))
 
 bash: CMD=/bin/bash
 bash: run
