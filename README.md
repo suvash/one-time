@@ -204,9 +204,22 @@ One-Time has been tested to work against Clojure 1.6 and up. The most recent rel
 
 If you already have Leiningen on your machine, you should just be able to run `lein all test` as you would do on other leiningen projects.
 
-As prefered by the author, you can also use the provided Makefile to run the tests. You will need Docker and Docker compose on your machine. After that you can simply run
+As prefered by the author, you can also use the provided Makefile to run the tests. In that case, you'll need the following on your machine
+- GNU Make ( Version 4.0 and up )
+- [Docker Engine](https://docs.docker.com/engine/installation/) ( Version 17.06.1 and hopefully upwards )
+- [Docker Compose](https://github.com/docker/compose/releases) ( Version 1.16.1 and hopefully upwards )
 
-    make test
+
+```
+# Get help
+$ make help
+
+# Run tests
+$ make test
+
+# Stop and cleanup docker instances etc.
+# make stop-clean
+```
 
 Then create a branch and make your changes on it. Once you are done with your changes and all tests pass, submit
 a pull request on GitHub.
