@@ -27,6 +27,9 @@ lein-repl: run ## Spawn a lein repl for one-time service
 test: CMD=lein all test
 test: run ## Run the test suite for one-time service
 
+docs: CMD=lein codox
+docs: run ## Generate the documentation
+
 stop: ## Stop all the service containers
 	$(DOCKER_COMPOSE) down
 
