@@ -51,7 +51,7 @@ Then add the following to Maven dependencies.
 
 ## Documentation
 
-The frequently used functions (with industry-standard defaults) are present in the `one-time.core` namespace. However, they build on functions present in other namespaces which can always be overridden or extended as needed.
+The frequently used functions (with industry-standard defaults) are present in the `one-time.core` namespace. However, they build on functions present in other namespaces which can always be overridden or extended as needed. Documentation on functions in individual namespaces (for the latest release) is available at https://suvash.github.io/one-time/
 
 ### Secret Key Generation
 
