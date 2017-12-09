@@ -18,6 +18,7 @@ build:  ## (Force) Build the one-time docker image ( eg. when having changed pro
 run: ## Run a one-off command in a new one-time service container. Specify using CMD (eg. make run-web CMD=lein test)
 	$(if $(CMD), $(DOCKER_COMPOSE_RUN) $(CMD), $(error -- CMD must be set))
 
+# When deploying from within containers, make sure to export GPG_TTY=$(tty) for signing to work
 bash: CMD=/bin/bash
 bash: run ## Spawn a bash shell for one-time service
 
