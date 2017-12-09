@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file. This change
 - Removed support for QR Code URLs generated via Google Chart APIs.
 - Remove Vagrant support for development environments.
 
-## [0.4.0] - 2017-08-06
+## [0.3.0] - 2017-08-06
 ### Added
 - Add Contributors section to the readme.
 - Add Changelog section to the readme.
