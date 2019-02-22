@@ -3,7 +3,11 @@ lein: lein
 script: lein all test
 jdk:
   - openjdk8
-  - oraclejdk7
+  - openjdk9
+  - openjdk10
+  - openjdk11
   - oraclejdk8
+  - oraclejdk9
+  - oraclejdk11
 after_script:
   - lein cloverage -o cov --coveralls && curl -F 'json_file=@cov/coveralls.json' 'https://coveralls.io/api/v1/jobs'
