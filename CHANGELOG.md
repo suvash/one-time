@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Added
+- Supported on Clojure 1.10
+
+### Changed
+- Bumped up all dependencies to use latest versions.
 
 ## [0.4.0] - 2017-12-09
 ### Added

@@ -241,6 +241,6 @@ These resources were invaluable towards developing this library.
 
 ## License
 
-Copyright © 2017 Suvash Thapaliya
+Copyright © 2019 Suvash Thapaliya
 
 Distributed under the [Eclipse Public License](https://github.com/suvash/one-time/blob/master/LICENSE).
