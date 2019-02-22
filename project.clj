@@ -9,8 +9,8 @@
                  [commons-codec "1.11"]
                  [ring/ring-codec "1.1.1"]
                  [com.github.kenglxn.qrgen/javase "2.5.0"]]
-  :profiles {:dev {:plugins      [[lein-cloverage "1.0.6"]
-                                  [lein-codox "0.10.3"]]}
+  :profiles {:dev {:plugins      [[lein-cloverage "1.0.13"]
+                                  [lein-codox "0.10.6"]]}
              :1.6 {:dependencies [[org.clojure/clojure "1.6.0"]]}
              :1.7 {:dependencies [[org.clojure/clojure "1.7.0"]]}
              :1.8 {:dependencies [[org.clojure/clojure "1.8.0"]]}
