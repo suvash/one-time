@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Changed
+- Use system default RNG instead of hardcoded SHA1PRNG. (Available implementations listed at https://docs.oracle.com/javase/8/docs/technotes/guides/security/SunProviders.html#SecureRandomImp)
 
 ## [0.5.0] - 2019-02-22
 ### Added
