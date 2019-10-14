@@ -5,5 +5,5 @@
   "Generate a random byte array."
   [size]
   (let [bytes (byte-array size)]
-    (.nextBytes (SecureRandom/getInstance "SHA1PRNG") bytes) ; mutating api
+    (-> (SecureRandom.) (.nextBytes bytes)) ; mutating api
     bytes))
