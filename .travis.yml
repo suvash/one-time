@@ -2,11 +2,11 @@ language: clojure
 lein: lein
 script: lein all test
 jdk:
-  - openjdk9
-  - openjdk13
+  - openjdk11
+  - openjdk14
   - openjdk-ea
   - oraclejdk11
-  - oraclejdk13
+  - oraclejdk14
   - oraclejdk-ea
 after_script:
   - lein cloverage -o cov --coveralls && curl -F 'json_file=@cov/coveralls.json' 'https://coveralls.io/api/v1/jobs'
