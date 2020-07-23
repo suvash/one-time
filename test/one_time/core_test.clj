@@ -25,7 +25,10 @@
                                                              :time-step 20}))
     (is  (ot/is-valid-totp-token? 258945 "4CYLIWVIEQVA5IVP" {:date (th/parse-date "Mon May 19 12:25:11 UTC 2014")
                                                              :time-step 40
-                                                             :hmac-sha-type :hmac-sha-256}))))
+                                                             :hmac-sha-type :hmac-sha-256}))
+    (is  (ot/is-valid-totp-token? 662524 "A4I774XAQM36J7IL" {:date (th/parse-date "Thu Jul 23 09:31:37 UTC 2020")
+                                                             :time-step 30
+                                                             :time-step-offset 1}))))
 
 (deftest get-hotp-token-test
   (testing "HOTP token for secret and counter test"

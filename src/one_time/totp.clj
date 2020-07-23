@@ -11,11 +11,12 @@
    https://tools.ietf.org/html/rfc4226"
   ([secret]
    ;; Default parameters if not provided
-   (get-token secret {:date (Date.) :time-step 30 :hmac-sha-type :hmac-sha-1}))
-  ([secret {:keys [date time-step hmac-sha-type], :or {date (Date.) time-step 30 hmac-sha-type :hmac-sha-1}}]
-   {:pre [(not-any? nil? [secret date time-step hmac-sha-type])]}
+   (get-token secret {:date (Date.) :time-step 30 :time-step-offset 0 :hmac-sha-type :hmac-sha-1}))
+  ([secret {:keys [date time-step time-step-offset hmac-sha-type]
+            :or {date (Date.) time-step 30 time-step-offset 0 hmac-sha-type :hmac-sha-1}}]
+   {:pre [(not-any? nil? [secret date time-step time-step-offset hmac-sha-type])]}
    ;; Get HOTP token with counter with given parameters
-   (let [counter(counter-since-epoch date time-step)]
+   (let [counter (+ (counter-since-epoch date time-step) time-step-offset)]
      (hotp/get-token secret counter hmac-sha-type))))
 
 (defn- counter-since-epoch
