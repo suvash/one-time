@@ -9,8 +9,20 @@
     (is (= 319222 (totp/get-token "A4I774XAQM36J7IL" {:date (th/parse-date "Thu Jul 21 01:12:31 UTC 2016")
                                                       :time-step 30})))
     (is (= 319222 (totp/get-token "A4I774XAQM36J7IL" {:date (th/parse-date "Thu Jul 21 01:12:31 UTC 2016")
-                                                      :time-step 30 :hmac-sha-type
-                                                      :hmac-sha-1})))
+                                                      :time-step 30
+                                                      :hmac-sha-type :hmac-sha-1})))
+
+    (is (= 662524 (totp/get-token "A4I774XAQM36J7IL" {:date (th/parse-date "Thu Jul 23 09:32:07 UTC 2020")
+                                                      :time-step 30})))
+    (is (= 662524 (totp/get-token "A4I774XAQM36J7IL" {:date (th/parse-date "Thu Jul 23 09:32:07 UTC 2020")
+                                                      :time-step 30
+                                                      :time-step-offset 0})))
+    (is (= 662524 (totp/get-token "A4I774XAQM36J7IL" {:date (th/parse-date "Thu Jul 23 09:31:37 UTC 2020")
+                                                      :time-step 30
+                                                      :time-step-offset 1})))
+    (is (= 662524 (totp/get-token "A4I774XAQM36J7IL" {:date (th/parse-date "Thu Jul 23 09:32:37 UTC 2020")
+                                                      :time-step 30
+                                                      :time-step-offset -1})))
 
     (is (= 135921 (totp/get-token "A4I774XAQM36J7IL" {:date (th/parse-date "Mon May 19 12:25:11 UTC 2014")})))
     (is (= 683074 (totp/get-token "A4I774XAQM36J7IL" {:date (th/parse-date "Mon May 19 12:25:11 UTC 2014")

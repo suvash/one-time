@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Added
+- Add clock drift support for TOTP
 
 ## [0.6.0] - 2020-06-21
 ### Added
