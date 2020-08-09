@@ -90,12 +90,17 @@ You're most likely to use the predicate function for verifying tokens that you r
 (Thread/sleep 30000)
 
 ;; Verify after 30 secs
-;; arguments are token-received, secret-key, counter
+;; arguments are token-received, secret-key
 (ot/is-valid-totp-token? current-token secret-key)
 ;= false
+
+;; Verify for the last time step offset, eg. support clock drifts
+;; arguments are token-received, secret-key, time-step-offset
+(ot/is-valid-totp-token? current-token secret-key {:time-step-offset -1})
+;= true
 ```
 
-The functions above also accept additional map by which various aspects of TOTP token generation is affected. One can configure them to accept a specific time (instead of current time), a different time step (instead of 30 secs), and a different HMAC SHA function (instead of HMAC-SHA-1). Feel free to look more into `one-time.core` and `one-time.totp` namespace to configure these.
+The functions above also accept additional map by which various aspects of TOTP token generation is affected. One can configure them to accept a specific time (instead of current time), a different time step (default 30 secs), a time step offset to support clock drifts (default current time step), and a different HMAC SHA function (instead of HMAC-SHA-1). Feel free to look more into `one-time.core` and `one-time.totp` namespace to configure these.
 
 ### HMAC based One-time passwords (HOTP)
 
