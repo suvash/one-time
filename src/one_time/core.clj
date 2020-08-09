@@ -16,7 +16,7 @@
   "Gets the TOTP token for the secret and parameters provided"
   ([secret]
    (totp/get-token secret))
-  ([secret {:keys [date time-step hmac-sha-type], :as all}]
+  ([secret {:keys [date time-step time-step-offset hmac-sha-type], :as all}]
    (totp/get-token secret all)))
 
 (defn is-valid-totp-token?
