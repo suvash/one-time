@@ -59,11 +59,16 @@
 (Thread/sleep 30000)
 
 ;; Verify after 30 secs
-;; arguments are token-received, secret-key, counter
+;; arguments are token-received, secret-key
 (ot/is-valid-totp-token? current-token secret-key)
 ;= false
+
+;; Verify for the last time step offset, eg. support clock drifts
+;; arguments are token-received, secret-key, time-step-offset
+(ot/is-valid-totp-token? current-token secret-key {:time-step-offset -1})
+;= true
 </code></pre>
-<p>The functions above also accept additional map by which various aspects of TOTP token generation is affected. One can configure them to accept a specific time (instead of current time), a different time step (instead of 30 secs), and a different HMAC SHA function (instead of HMAC-SHA-1). Feel free to look more into <code>one-time.core</code> and <code>one-time.totp</code> namespace to configure these.</p>
+<p>The functions above also accept additional map by which various aspects of TOTP token generation is affected. One can configure them to accept a specific time (instead of current time), a different time step (default 30 secs), a time step offset to support clock drifts (default current time step), and a different HMAC SHA function (instead of HMAC-SHA-1). Feel free to look more into <code>one-time.core</code> and <code>one-time.totp</code> namespace to configure these.</p>
 <h3><a href="#hmac-based-one-time-passwords-hotp-" name="hmac-based-one-time-passwords-hotp-"></a>HMAC based One-time passwords (HOTP)</h3>
 <p>HOTP is also better understood as counter based OTP. <code>one-time.core</code> namespace provides two functions for working with HOTP, one for getting the HOTP token at a certain counter and a predicate function for verifying.</p>
 <p>You’re most likely to use the predicate function for verifying tokens that you receive from the user. HOTP is not supported by Google Authenticator, Authy or Lastpass Authenticator. (They all support TOTP.)</p>
