@@ -4,6 +4,16 @@
             [one-time.totp  :as totp]
             [one-time.hotp  :as hotp]))
 
+(defn ^:private safe=
+  "Constant-time comparison (for numbers with equal base 10 length) for numeric
+  types, via bytewise string equality of the decimal representation."
+  [x y]
+  (let [x' (.getBytes (str x))
+        y' (.getBytes (str y))]
+    (and
+      (= (count x') (count y'))
+      (zero? (reduce bit-or (map bit-xor x' y'))))))
+
 (defn generate-secret-key
   "Generate a secret key for use in TOTP/HOTP."
   []
@@ -22,9 +32,9 @@
 (defn is-valid-totp-token?
   "Checks if the presented totp token is valid against a secret and options"
   ([token secret]
-   (== token (get-totp-token secret)))
+   (safe= token (get-totp-token secret)))
   ([token secret options]
-   (== token (get-totp-token secret options))))
+   (safe= token (get-totp-token secret options))))
 
 (defn get-hotp-token
   "Gets the HOTP token for the secret and counter provided"
@@ -34,4 +44,4 @@
 (defn is-valid-hotp-token?
   "Checks if the presented hotp token is valid against a secret and counter"
   [token secret counter]
-  (== token (get-hotp-token secret counter)))
+  (safe= token (get-hotp-token secret counter)))

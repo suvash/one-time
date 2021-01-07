@@ -1,7 +1,23 @@
 (ns one-time.core-test
-  (:require [clojure.test :refer [deftest testing is]]
+  (:require [clojure.test :refer [deftest testing is are]]
             [one-time.test-helper :as th]
             [one-time.core :as ot]))
+
+(deftest safe=-test
+  (are [x] (#'ot/safe= x x)
+    0
+    1
+    111
+    123
+    1111111111111111)
+
+  (is (not (#'ot/safe= 12345 12945)))
+  (is (not (#'ot/safe= 10 0)))
+  (is (not (#'ot/safe= 0 10)))
+
+  (testing "safe= on non-equal numbers with equal prefixes"
+    (is (not (#'ot/safe= 11111 11)))
+    (is (not (#'ot/safe= 11 11111)))))
 
 (deftest generate-secret-key-test
   (testing "Secret Key type and length test"
