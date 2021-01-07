@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Added
+- Add (constant) time safe comparision of tokens
 
 ## [0.7.0] - 2020-08-09
 ### Added
