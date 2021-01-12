@@ -2,8 +2,17 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
 ## [Unreleased]
-### Added
-- Add (constant) time safe comparision of tokens
+### Notes
+- An intermediate unreleased version had an attempt at (constant) time safe
+  comparision of tokens introduced in #11. This change introduced a subtle
+  vulnerability (see #12 for details). The following commits in the `main`
+  branch are vulnerable:
+
+  * d69435b4d91769a8f84ecd0e32ebda607fc9de85
+  * 60d161c525a1b750fff28d4adcc5c2cc7597cf4c
+  * 86a90eb55103fbebb878a8be2208433825bec0ed
+
+  We've searched GitHub to make sure nobody is using these.
 
 ## [0.7.0] - 2020-08-09
 ### Added
