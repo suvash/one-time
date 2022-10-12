@@ -14,6 +14,28 @@ All notable changes to this project will be documented in this file. This change
 
   We've searched GitHub to make sure nobody is using these.
 
+## [0.7.1] - 2022-10-12
+- Fix for https://github.com/suvash/one-time/issues/15
+- Add sub-dependencies to project.clj
+- Exclude sub-dependencies from com.github.kenglxn.qrgen/javase
+- Add lein-ancient
+- Upgrade Clojure versions
+- Add [Dependency tree](deps-tree.md)
+- Add [Grype and Syft overview](grype-syft.md)
+- All tests successfull:
+  ```shell
+  lein test
+  lein test one-time.codec-test
+  lein test one-time.core-test
+  lein test one-time.hotp-test
+  lein test one-time.qrgen-test
+  lein test one-time.totp-test
+  lein test one-time.uri-test
+  lein test one-time.util-test
+  Ran 17 tests containing 44 assertions.
+  0 failures, 0 errors.
+  ```
+
 ## [0.7.0] - 2020-08-09
 ### Added
 - Add clock drift (time-step-offset) support for TOTP
@@ -69,6 +91,7 @@ All notable changes to this project will be documented in this file. This change
 - First version of the project made public
 
 [Unreleased]: https://github.com/suvash/one-time/compare/v0.7.0...HEAD
+[0.7.1]: https://github.com/suvash/one-time/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/suvash/one-time/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/suvash/one-time/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/suvash/one-time/compare/v0.4.0...v0.5.0
