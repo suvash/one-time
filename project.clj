@@ -1,4 +1,4 @@
-(defproject one-time "0.7.1"
+(defproject one-time "0.7.0"
   :author "Suvash Thapaliya"
   :description "One Time Password (TOTP and HOTP) library for Clojure. TOTP/HOTP is widely used for Two factor / Multi Factor Authentication."
   :url "http://github.com/suvash/one-time"
