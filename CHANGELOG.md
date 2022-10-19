@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 ### Notes
+- Bump minimum Clojure version to 1.10.0 (because it's the minimum version supported on officially supported Java LTS releases)
+- Drop running tests for Clojure 1.6 & 1.7
+- Add running tests for Clojure 1.10.1, 1.10.2, 1.10.3, 1.11, 1.11.1, 1.12.0-alpha1 (in addition to 1.8 & 1.9)
+- Update all the dependencies to the latest versions accordingly
+- Start using Github Actions for running tests across a matrix of ubuntu, macos, windows & java 8, 11, 16, 17
+- Drop Travis config
 - An intermediate unreleased version had an attempt at (constant) time safe
   comparision of tokens introduced in #11. This change introduced a subtle
   vulnerability (see #12 for details). The following commits in the `main`
