@@ -40,3 +40,9 @@ jobs:
 
     - name: Run tests
       run: lein all test
+
+    - name: Run coverage & send to coveralls
+      if: ${{ matrix.os == 'ubuntu-latest' && matrix.java == '16' }}
+      run: |
+        lein cloverage -o cov --coveralls
+        curl -F 'json_file=@cov/coveralls.json' 'https://coveralls.io/api/v1/jobs'
