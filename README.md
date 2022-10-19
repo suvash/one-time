@@ -1,8 +1,9 @@
 # One Time Password (TOTP and HOTP) library for Clojure.
 
-[![Build Status](https://travis-ci.org/suvash/one-time.svg?branch=master)](https://travis-ci.org/suvash/one-time?branch=master)
-[![Coverage Status](https://coveralls.io/repos/suvash/one-time/badge.svg?branch=master)](https://coveralls.io/r/suvash/one-time?branch=master)
+[![Clojure CI](https://github.com/suvash/one-time/actions/workflows/clojure.yml/badge.svg)](https://github.com/suvash/one-time/actions/workflows/clojure.yml?query=branch%3Amain)
 [![Clojars Project](https://img.shields.io/clojars/v/one-time.svg)](https://clojars.org/one-time)
+
+
 
 A Clojure library for generating one time passwords (HOTP & TOTP) as per [RFC 4226](http://tools.ietf.org/html/rfc4226) and [RFC 6238](http://tools.ietf.org/html/rfc6238). One time passwords are used by a lot of websites for [multi factor / two factor authentication](https://www.youtube.com/watch?v=17rykTIX_HY). You can find a list of such websites [here](https://twofactorauth.org).
 
