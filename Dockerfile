@@ -1,4 +1,4 @@
-FROM clojure:openjdk-15-lein-2.9.3-alpine
+FROM clojure:openjdk-17-lein-2.9.8-slim-buster
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
