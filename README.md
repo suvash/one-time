@@ -25,29 +25,8 @@ Add the following to your `:dependencies` in `project.clj`.
 
     [one-time "0.8.0"]
 
-### Maven
 
-Make sure to add Clojars to your `pom.xml`:
-
-``` xml
-<repository>
-  <id>clojars.org</id>
-  <url>http://clojars.org/repo</url>
-</repository>
-```
-
-Then add the following to Maven dependencies.
-
-    <dependency>
-      <groupId>one-time</groupId>
-      <artifactId>one-time</artifactId>
-      <version>0.8.0</version>
-    </dependency>
-
-
-### Gradle
-
-    compile "one-time:one-time:0.8.0"
+Please visit [the package listing at Clojars ](https://clojars.org/one-time) for more options.
 
 
 ## Documentation
