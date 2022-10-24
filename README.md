@@ -211,7 +211,7 @@ a pull request on GitHub.
 
 ## Changelog
 
-Please check the [CHANGELOG.md](https://github.com/suvash/one-time/blob/master/CHANGELOG.md) graph for now.
+Please check the [CHANGELOG.md](https://github.com/suvash/one-time/blob/main/CHANGELOG.md) graph for now.
 
 ## Contributors
 
@@ -228,4 +228,4 @@ These resources were invaluable towards developing this library.
 
 Copyright © 2019 Suvash Thapaliya
 
-Distributed under the [Eclipse Public License](https://github.com/suvash/one-time/blob/master/LICENSE).
+Distributed under the [Eclipse Public License](https://github.com/suvash/one-time/blob/main/LICENSE).
