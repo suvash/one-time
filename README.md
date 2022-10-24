@@ -2,6 +2,7 @@
 
 [![Clojure CI](https://github.com/suvash/one-time/actions/workflows/clojure.yml/badge.svg)](https://github.com/suvash/one-time/actions/workflows/clojure.yml?query=branch%3Amain)
 [![Clojars Project](https://img.shields.io/clojars/v/one-time.svg)](https://clojars.org/one-time)
+[![CljDoc](https://cljdoc.org/badge/one-time/one-time)](https://cljdoc.org/d/one-time/one-time/)
 
 
 
