@@ -27,7 +27,7 @@ Add the following to your `:dependencies` in `project.clj`.
     [one-time "0.8.0"]
 
 
-Please visit [the package listing at Clojars ](https://clojars.org/one-time) for more options.
+You will need to include Jitpack as a maven repository. Please visit [the package listing at Clojars ](https://clojars.org/one-time) for more options.
 
 
 ## Documentation
