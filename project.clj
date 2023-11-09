@@ -8,12 +8,8 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [commons-codec "1.15"]
                  [ring/ring-codec "1.2.0"]
-                 [com.google.zxing/javase "3.5.0"]
-                 [org.apache.xmlgraphics/batik-dom "1.15"]
-                 [org.apache.xmlgraphics/batik-svggen "1.15"]
-                 [com.github.kenglxn.qrgen/javase "2.6.0" :exclusions [com.google.zxing/javase
-                                                                       org.apache.xmlgraphics/batik-dom
-                                                                       org.apache.xmlgraphics/batik-svggen]]]
+                 [io.nayuki/qrcodegen "1.5.0"]
+                 ]
   :plugins      [[lein-ancient "1.0.0-RC4-SNAPSHOT"]]
   :profiles {:dev    {:plugins      [[lein-cloverage "1.2.4"]
                                      [lein-codox "0.10.8"]
