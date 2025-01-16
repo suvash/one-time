@@ -3,7 +3,7 @@ SHELL:=/usr/bin/env bash
 
 RUN_SERVICE:=one-time
 
-DOCKER_COMPOSE:=docker-compose -f docker-compose.yml
+DOCKER_COMPOSE:=docker compose -f docker-compose.yml
 DOCKER_COMPOSE_RUN:=$(DOCKER_COMPOSE) run --rm $(RUN_SERVICE)
 
 .PHONY: run bash lein-repl test stop prune
