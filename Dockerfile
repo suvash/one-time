@@ -1,4 +1,4 @@
-FROM clojure:openjdk-17-lein-2.9.8-slim-buster
+FROM clojure:temurin-21-lein-2.11.2-bookworm-slim
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
