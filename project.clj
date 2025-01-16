@@ -6,13 +6,13 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[org.clojure/clojure "1.10.0"]
-                 [commons-codec "1.15"]
+                 [commons-codec "1.17.2"]
                  [ring/ring-codec "1.2.0"]
-                 [io.nayuki/qrcodegen "1.5.0"]]
+                 [io.nayuki/qrcodegen "1.6.0"]]
   :plugins      [[lein-ancient "1.0.0-RC4-SNAPSHOT"]]
   :profiles {:dev    {:plugins      [[lein-cloverage "1.2.4"]
                                      [lein-codox "0.10.8"]
-                                     [lein-cljfmt "0.9.0"]
+                                     [dev.weavejester/lein-cljfmt "0.13.0"]
                                      [lein-ancient "1.0.0-RC4-SNAPSHOT"]]}
              :1.10   {:dependencies [[org.clojure/clojure "1.10.0"]]}
              :1.10.1 {:dependencies [[org.clojure/clojure "1.10.1"]]}
