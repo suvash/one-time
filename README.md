@@ -24,7 +24,7 @@ One-Time is a feature complete and fairly stable library, given the small surfac
 
 Add the following to your `:dependencies` in `project.clj`.
 
-    [one-time "0.8.0"]
+    [one-time "0.9.0"]
 
 
 Please visit [the package listing at Clojars ](https://clojars.org/one-time) for more options.
