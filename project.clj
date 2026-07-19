@@ -6,8 +6,8 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[org.clojure/clojure "1.10.0"]
-                 [commons-codec "1.17.2"]
-                 [ring/ring-codec "1.2.0"]
+                 [commons-codec "1.22.0"]
+                 [ring/ring-codec "1.3.0"]
                  [io.nayuki/qrcodegen "1.6.0"]]
   :plugins      [[lein-ancient "1.0.0-RC4-SNAPSHOT"]]
   :profiles {:dev    {:plugins      [[lein-cloverage "1.2.4"]
@@ -23,7 +23,8 @@
              :1.11.2 {:dependencies [[org.clojure/clojure "1.11.2"]]}
              :1.11.3 {:dependencies [[org.clojure/clojure "1.11.3"]]}
              :1.11.4 {:dependencies [[org.clojure/clojure "1.11.4"]]}
-             :1.12.0 {:dependencies [[org.clojure/clojure "1.12.0"]]}}
+             :1.12.0 {:dependencies [[org.clojure/clojure "1.12.0"]]}
+             :1.12.5 {:dependencies [[org.clojure/clojure "1.12.5"]]}}
   :codox {:output-path "docs"
           :doc-files   ["README.md"]
           :source-uri  "https://github.com/suvash/one-time/blob/v{version}/{filepath}#L{line}"}
@@ -32,5 +33,5 @@
                               :snapshots false
                               :releases {:checksum :fail :update :always}}]
                  ["snapshots" {:url "https://oss.sonatype.org/content/repositories/snapshots"}]]
-  :aliases  {"all" ["with-profile" "+dev:+1.10:+1.10.1:+1.10.2:+1.10.3:+1.11:+1.11.1:+1.11.2:+1.11.3:+1.11.4:+1.12.0"]}
+  :aliases  {"all" ["with-profile" "+dev:+1.10:+1.10.1:+1.10.2:+1.10.3:+1.11:+1.11.1:+1.11.2:+1.11.3:+1.11.4:+1.12.0:+1.12.5"]}
   :global-vars {*warn-on-reflection* true})
