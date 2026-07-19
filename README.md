@@ -8,10 +8,7 @@
 
 A Clojure library for generating one time passwords (HOTP & TOTP) as per [RFC 4226](http://tools.ietf.org/html/rfc4226) and [RFC 6238](http://tools.ietf.org/html/rfc6238). One time passwords are used by a lot of websites for [multi factor / two factor authentication](https://www.youtube.com/watch?v=17rykTIX_HY). You can find a list of such websites [here](https://twofactorauth.org).
 
-This library has been tested to be compatible with :
-* [Google Authenticator](https://github.com/google/google-authenticator) for [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) and [iPhone](https://itunes.apple.com/en/app/google-authenticator/id388497605)
-- [Authy](https://www.authy.com) for [Android](https://play.google.com/store/apps/details?id=com.authy.authy) and [iPhone](https://itunes.apple.com/en/app/authy/id494168017)
-- [Lastpass Authenticator](https://lastpass.com/auth/) for [Android](https://play.google.com/store/apps/details?id=com.authy.authy) and [iPhone](https://itunes.apple.com/us/app/lastpass-authenticator/id1079110004)
+This library has been tested to be compatible with [Ente Auth](https://ente.com/auth/), [Bitwarden Authenticator](https://bitwarden.com/products/authenticator/) and Google Authenticator.
 
 
 ## Project Maturity
@@ -36,7 +33,7 @@ The frequently used functions (with industry-standard defaults) are present in t
 
 ### Secret Key Generation
 
-Secret key generation is the first step in being able to use TOTP/HOTP. A function is provided by `one-time.core` namespace that generates random secret keys compatible with Google Authenticator, Authy and Lastpass Authenticator.
+Secret key generation is the first step in being able to use TOTP/HOTP. A function is provided by `one-time.core` namespace that generates random secret keys compatible with Ente Auth, Bitwarden Authenticator & Google Authenticator.
 
 ```clojure
 (require '[one-time.core :as ot])
@@ -49,7 +46,7 @@ Secret key generation is the first step in being able to use TOTP/HOTP. A functi
 
 TOTP is based on HOTP with a timestamp replacing the incrementing counter. `one-time.core` namespace provides two functions for working with TOTP, one for getting the TOTP token at a certain time and a predicate function for verifying.
 
-You're most likely to use the predicate function for verifying tokens that you receive from the user (Google Authenticator/Authy/Lastpass Authenticator)
+You're most likely to use the predicate function for verifying tokens that you receive from the user (Ente Auth/Bitwarden Authenticator/Google Authenticator)
 
 ```clojure
 (require '[one-time.core :as ot])
@@ -87,7 +84,7 @@ The functions above also accept additional map by which various aspects of TOTP 
 
 HOTP is also better understood as counter based OTP. `one-time.core` namespace provides two functions for working with HOTP, one for getting the HOTP token at a certain counter and a predicate function for verifying.
 
-You're most likely to use the predicate function for verifying tokens that you receive from the user. HOTP is not supported by Google Authenticator, Authy or Lastpass Authenticator. (They all support TOTP.)
+You're most likely to use the predicate function for verifying tokens that you receive from the user. HOTP is not supported by Ente Auth, Bitwarden Authenticator or Google Authenticator. (They all support TOTP.)
 
 ```clojure
 (require '[one-time.core :as ot])
@@ -146,7 +143,7 @@ The URIs generated above can then be embedded into QR codes that can be displaye
 
 ### Working Example
 
-Scan the following barcode with your phone, using Google Authenticator, Authy or Lastpass Authenticator.
+Scan the following barcode with your phone, using Ente Auth, Bitwarden Authenticator or Google Authenticator.
 
 ![QR Code for TOTP](test/qrgen_TA4WPSAGBMGXLFVI.JPG)
 
