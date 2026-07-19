@@ -148,7 +148,7 @@ The URIs generated above can then be embedded into QR codes that can be displaye
 
 Scan the following barcode with your phone, using Google Authenticator, Authy or Lastpass Authenticator.
 
-![QR Code for TOTP](https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=otpauth%3A%2F%2Ftotp%2FCompany.com%3Auser%2540email.com%3Fsecret%3DTA4WPSAGBMGXLFVI%26issuer%3DCompany.com)
+![QR Code for TOTP](test/qrgen_TA4WPSAGBMGXLFVI.JPG)
 
 Run the following in a REPL and compare the values on the REPL and your device. Make sure you don't have any clock drifts etc., especially if you're running it inside a VM/container.
 ```clojure
@@ -163,7 +163,7 @@ Run the following in a REPL and compare the values on the REPL and your device. 
 
 ### QR Code Image Generation
 
-This library wraps over https://github.com/kenglxn/QRGen, to generate QR code images locally. The generated image can be read as a `java.io.File` or over a `java.io.ByteArrayoutputstream`. Optionally, image type (BMP,JPG,PNG,GIF) and image size can be provided.
+This library wraps over https://www.nayuki.io/page/qr-code-generator-library, to generate QR code images locally. The generated image can be read as a `java.io.File` or over a `java.io.ByteArrayoutputstream`. Optionally, image type (BMP,JPG,PNG,GIF) and image size can be provided.
 ```clojure
 (require '[one-time.qrgen :as qrgen])
 
@@ -171,20 +171,20 @@ This library wraps over https://github.com/kenglxn/QRGen, to generate QR code im
 (def secret-key "HTWU5NFLBMWY2MQS")
 
 ;; TOTP QRcode image file generation, default image-scale 6(pixels per module) & type JPG (default image size 126px square)
-(def qrcode-file (qrgen/totp-file {:label "company.org" :user "user@gmail.com" :secret secret}))
+(def qrcode-file (qrgen/totp-file {:label "company.org" :user "user@gmail.com" :secret secret-key}))
 
 ;; TOTP QRcode image stream generation, in GIF
-(def qrcode-stream (qrgen/totp-stream {:image-type :GIF :label "company.org" :user "user@gmail.com" :secret secret}))
+(def qrcode-stream (qrgen/totp-stream {:image-type :GIF :label "company.org" :user "user@gmail.com" :secret secret-key}))
 
 ;; HOTP QRcode image file generation, image-scale 8 (8*21 = 168px square) in PNG
-(def qrcode-file (qrgen/hotp-file {:image-type :PNG :image-scale 8 :label "company.org" :user "user@gmail.com" :secret secret :counter 123}))
+(def qrcode-file (qrgen/hotp-file {:image-type :PNG :image-scale 8 :label "company.org" :user "user@gmail.com" :secret secret-key :counter 123}))
 
 ;; HOTP QRcode image stream generation
-(def qrcode-stream (qrgen/hotp-stream {:label "company.org" :user "user@gmail.com" :secret secret :counter 123}))
+(def qrcode-stream (qrgen/hotp-stream {:label "company.org" :user "user@gmail.com" :secret secret-key :counter 123}))
 ```
 ## Supported Clojure Versions
 
-One-Time has been tested to work against Clojure 1.6 and up. The most recent release is always recommended.
+One-Time has been tested to work against Clojure 1.10 and up. The most recent release is always recommended.
 
 ## Development
 
