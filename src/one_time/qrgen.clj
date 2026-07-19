@@ -1,6 +1,7 @@
 (ns one-time.qrgen
   (:require [one-time.uri :as uri])
   (:import [java.io ByteArrayOutputStream]
+           [java.awt.image BufferedImage]
            [javax.imageio ImageIO]
            [io.nayuki.qrcodegen QrCode QrCode$Ecc]))
 
@@ -9,6 +10,23 @@
    :GIF "GIF"
    :PNG "PNG"
    :BMP "BMP"})
+
+(defn- ^BufferedImage to-image
+  "Renders a QrCode to a BufferedImage."
+  ([qr scale border]
+   (to-image qr scale border 0xFFFFFF 0x000000))
+  ([^QrCode qr scale border light-color dark-color]
+   {:pre [(pos? scale) (>= border 0)]}
+   (let [size   (.size qr)
+         dim    (* (+ size (* border 2)) scale)
+         result (BufferedImage. dim dim BufferedImage/TYPE_INT_RGB)]
+     (doseq [y (range dim)
+             x (range dim)]
+       (let [module-x (- (quot x scale) border)
+             module-y (- (quot y scale) border)
+             dark?    (.getModule qr module-x module-y)]
+         (.setRGB result x y (if dark? dark-color light-color))))
+     result)))
 
 (defn totp-stream
   "Returns a java.io.ByteArrayOutputStream with the totp qrcode"
@@ -21,7 +39,7 @@
                                :secret secret
                                :user   user})
         (QrCode/encodeText QrCode$Ecc/HIGH)
-        (.toImage image-scale image-border)
+        (to-image image-scale image-border)
         (ImageIO/write ^String (image-types image-type) baos))
     baos))
 
@@ -36,7 +54,7 @@
                                :secret secret
                                :user   user})
         (QrCode/encodeText QrCode$Ecc/HIGH)
-        (.toImage image-scale image-border)
+        (to-image image-scale image-border)
         (ImageIO/write ^String (image-types image-type) f))
     f))
 
@@ -52,7 +70,7 @@
                                :user    user
                                :counter counter})
         (QrCode/encodeText QrCode$Ecc/HIGH)
-        (.toImage image-scale image-border)
+        (to-image image-scale image-border)
         (ImageIO/write ^String (image-types image-type) baos))
     baos))
 
@@ -68,6 +86,6 @@
                                :user    user
                                :counter counter})
         (QrCode/encodeText QrCode$Ecc/HIGH)
-        (.toImage image-scale image-border)
+        (to-image image-scale image-border)
         (ImageIO/write ^String (image-types image-type) f))
     f))

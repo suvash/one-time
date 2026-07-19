@@ -8,7 +8,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [commons-codec "1.22.0"]
                  [ring/ring-codec "1.3.0"]
-                 [io.nayuki/qrcodegen "1.6.0"]]
+                 [io.nayuki/qrcodegen "1.8.0"]]
   :plugins      [[lein-ancient "1.0.0-RC4-SNAPSHOT"]]
   :profiles {:dev    {:plugins      [[lein-cloverage "1.2.4"]
                                      [lein-codox "0.10.8"]
