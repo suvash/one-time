@@ -3,13 +3,14 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 ## Added
-- Add running tests for Clojure 1.11.2, 1.11.3, 1.11.4, 1.12.0
+- Add running tests for Clojure 1.11.2, 1.11.3, 1.11.4, 1.12.0, 1.12.5
 
 ## Changed
-- Update commons-codec to 1.17.2
-- Replace a bunch of libraries with a single library for qr code generation (io.nayuki/qrcodegen)
-- Update io.nayuki/qrcodegen to version 1.6 (since v1.7 removed the toImage function)
-- Updated qrgen function apis to have parameters `image-scale` & `image-border` instead of `image-size`
+- Update all dependencies to the latest version
+- Update QR code generation
+  - Replace a bunch of libraries with a single library for qr code generation (io.nayuki/qrcodegen)
+  - Updated qrgen function apis to have parameters `image-scale` & `image-border` instead of `image-size`
+  - Update io.nayuki/qrcodegen to 1.8.0, and implement own to-image since toImage was removed from 1.7.0
 
 ### Removed
 - Drop running tests for Clojure 1.8, 1.9 & alpha
